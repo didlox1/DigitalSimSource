@@ -43,7 +43,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "DigitalSim::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-DigitalSim-Debug-b8cf6ddb20e3bbd1df14.json",
+					"jsonFile" : "target-DigitalSim-Debug-bea907f5be1e9549f4a4.json",
 					"name" : "DigitalSim",
 					"projectIndex" : 0
 				},
@@ -67,8 +67,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSim/out/build/debug",
-		"source" : "C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSim"
+		"build" : "C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/out/build/debug",
+		"source" : "C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource"
 	},
 	"version" : 
 	{

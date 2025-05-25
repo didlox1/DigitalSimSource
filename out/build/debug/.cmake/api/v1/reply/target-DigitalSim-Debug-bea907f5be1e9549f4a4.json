@@ -27,16 +27,16 @@
 		"files" : 
 		[
 			"CMakeLists.txt",
-			"C:/Qt/6.9.0/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsTargets.cmake",
-			"C:/Qt/6.9.0/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake",
-			"C:/Qt/6.9.0/mingw_64/lib/cmake/Qt6/Qt6Config.cmake",
-			"C:/Qt/6.9.0/mingw_64/lib/cmake/Qt6Core/Qt6CoreTargets.cmake",
-			"C:/Qt/6.9.0/mingw_64/lib/cmake/Qt6Core/Qt6CoreConfig.cmake",
+			"C:/Qt/6.9.0/msvc2022_64/lib/cmake/Qt6Widgets/Qt6WidgetsTargets.cmake",
+			"C:/Qt/6.9.0/msvc2022_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake",
+			"C:/Qt/6.9.0/msvc2022_64/lib/cmake/Qt6/Qt6Config.cmake",
+			"C:/Qt/6.9.0/msvc2022_64/lib/cmake/Qt6Core/Qt6CoreTargets.cmake",
+			"C:/Qt/6.9.0/msvc2022_64/lib/cmake/Qt6Core/Qt6CoreConfig.cmake",
 			"C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
-			"C:/Qt/6.9.0/mingw_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake",
-			"C:/Qt/6.9.0/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake",
-			"C:/Qt/6.9.0/mingw_64/lib/cmake/Qt6Gui/Qt6GuiTargets.cmake",
-			"C:/Qt/6.9.0/mingw_64/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake"
+			"C:/Qt/6.9.0/msvc2022_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake",
+			"C:/Qt/6.9.0/msvc2022_64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake",
+			"C:/Qt/6.9.0/msvc2022_64/lib/cmake/Qt6Gui/Qt6GuiTargets.cmake",
+			"C:/Qt/6.9.0/msvc2022_64/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake"
 		],
 		"nodes" : 
 		[
@@ -197,19 +197,27 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "/DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++20 -MDd"
+					"fragment" : "-DQT_QML_DEBUG /Zi /Ob0 /Od /RTC1 -std:c++20 -MDd"
 				},
 				{
 					"backtrace" : 25,
 					"fragment" : "/Zc:__cplusplus"
+				},
+				{
+					"backtrace" : 2,
+					"fragment" : "-Zc:__cplusplus"
+				},
+				{
+					"backtrace" : 2,
+					"fragment" : "-permissive-"
+				},
+				{
+					"backtrace" : 2,
+					"fragment" : "-utf-8"
 				}
 			],
 			"defines" : 
 			[
-				{
-					"backtrace" : 2,
-					"define" : "MINGW_HAS_SECURE_API=1"
-				},
 				{
 					"backtrace" : 2,
 					"define" : "QT_CORE_LIB"
@@ -251,36 +259,36 @@
 			[
 				{
 					"backtrace" : 0,
-					"path" : "C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSim/out/build/x64-Debug/DigitalSim_autogen/include"
+					"path" : "C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/out/build/debug/DigitalSim_autogen/include"
 				},
 				{
 					"backtrace" : 26,
-					"path" : "C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSim/include"
+					"path" : "C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/include"
 				},
 				{
 					"backtrace" : 2,
 					"isSystem" : true,
-					"path" : "C:/Qt/6.9.0/mingw_64/include/QtWidgets"
+					"path" : "C:/Qt/6.9.0/msvc2022_64/include/QtWidgets"
 				},
 				{
 					"backtrace" : 2,
 					"isSystem" : true,
-					"path" : "C:/Qt/6.9.0/mingw_64/include"
+					"path" : "C:/Qt/6.9.0/msvc2022_64/include"
 				},
 				{
 					"backtrace" : 2,
 					"isSystem" : true,
-					"path" : "C:/Qt/6.9.0/mingw_64/include/QtCore"
+					"path" : "C:/Qt/6.9.0/msvc2022_64/include/QtCore"
 				},
 				{
 					"backtrace" : 2,
 					"isSystem" : true,
-					"path" : "C:/Qt/6.9.0/mingw_64/mkspecs/win32-g++"
+					"path" : "C:/Qt/6.9.0/msvc2022_64/mkspecs/win32-msvc"
 				},
 				{
 					"backtrace" : 2,
 					"isSystem" : true,
-					"path" : "C:/Qt/6.9.0/mingw_64/include/QtGui"
+					"path" : "C:/Qt/6.9.0/msvc2022_64/include/QtGui"
 				}
 			],
 			"language" : "CXX",
@@ -298,9 +306,8 @@
 			[
 				0,
 				1,
-				4,
-				10,
-				11
+				7,
+				8
 			]
 		}
 	],
@@ -320,7 +327,7 @@
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "/DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -MDd",
+				"fragment" : "-DQT_QML_DEBUG /Zi /Ob0 /Od /RTC1 -MDd",
 				"role" : "flags"
 			},
 			{
@@ -329,17 +336,17 @@
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "C:\\Qt\\6.9.0\\mingw_64\\lib\\libQt6Widgets.a",
+				"fragment" : "C:\\Qt\\6.9.0\\msvc2022_64\\lib\\Qt6Widgetsd.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 9,
-				"fragment" : "C:\\Qt\\6.9.0\\mingw_64\\lib\\libQt6Gui.a",
+				"fragment" : "C:\\Qt\\6.9.0\\msvc2022_64\\lib\\Qt6Guid.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 9,
-				"fragment" : "C:\\Qt\\6.9.0\\mingw_64\\lib\\libQt6Core.a",
+				"fragment" : "C:\\Qt\\6.9.0\\msvc2022_64\\lib\\Qt6Cored.lib",
 				"role" : "libraries"
 			},
 			{
@@ -394,37 +401,33 @@
 			[
 				0,
 				1,
-				4,
-				10,
-				11
-			]
-		},
-		{
-			"name" : "",
-			"sourceIndexes" : 
-			[
-				2,
-				13
+				7,
+				8
 			]
 		},
 		{
 			"name" : "Header Files",
 			"sourceIndexes" : 
 			[
+				2,
 				3,
+				4,
 				5,
-				6,
-				7,
-				8,
-				9,
-				12
+				6
+			]
+		},
+		{
+			"name" : "",
+			"sourceIndexes" : 
+			[
+				9
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				14
+				10
 			]
 		}
 	],
@@ -434,7 +437,7 @@
 			"backtrace" : 0,
 			"compileGroupIndex" : 0,
 			"isGenerated" : true,
-			"path" : "out/build/x64-Debug/DigitalSim_autogen/mocs_compilation.cpp",
+			"path" : "out/build/debug/DigitalSim_autogen/mocs_compilation.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -445,44 +448,28 @@
 		},
 		{
 			"backtrace" : 1,
-			"path" : "mainwindow.ui",
+			"path" : "include/Gate.h",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
-			"path" : "mainwindow.h",
-			"sourceGroupIndex" : 2
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "mainwindow.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"path" : "include/Gate.h",
-			"sourceGroupIndex" : 2
-		},
-		{
-			"backtrace" : 1,
 			"path" : "include/ANDGate.h",
-			"sourceGroupIndex" : 2
+			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
 			"path" : "include/ORGate.h",
-			"sourceGroupIndex" : 2
+			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
 			"path" : "include/Connector.h",
-			"sourceGroupIndex" : 2
+			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
 			"path" : "include/LED.h",
-			"sourceGroupIndex" : 2
+			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
@@ -499,19 +486,13 @@
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "out/build/x64-Debug/DigitalSim_autogen/include/ui_mainwindow.h",
+			"path" : "out/build/debug/DigitalSim_autogen/timestamp",
 			"sourceGroupIndex" : 2
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "out/build/x64-Debug/DigitalSim_autogen/timestamp",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 0,
-			"isGenerated" : true,
-			"path" : "out/build/x64-Debug/DigitalSim_autogen/timestamp.rule",
+			"path" : "out/build/debug/DigitalSim_autogen/timestamp.rule",
 			"sourceGroupIndex" : 3
 		}
 	],

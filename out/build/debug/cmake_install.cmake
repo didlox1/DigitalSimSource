@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSim
+# Install script for directory: C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSim/out/build/debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/out/build/debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

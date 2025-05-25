@@ -1,11 +1,14 @@
 # ninja log v5
-13	648	7693630749499423	DigitalSim_autogen/timestamp	8da1f224f2a884dc
-13	648	7693630749499423	DigitalSim_autogen/mocs_compilation.cpp	8da1f224f2a884dc
-13	648	7693630749499423	C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSim/out/build/debug/DigitalSim_autogen/timestamp	8da1f224f2a884dc
-13	648	7693630749499423	C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSim/out/build/debug/DigitalSim_autogen/mocs_compilation.cpp	8da1f224f2a884dc
-706	1195	7693630755774503	CMakeFiles/DigitalSim.dir/src/Gate.cpp.obj	5e777d4e84a0753
-690	1316	7693630756964546	CMakeFiles/DigitalSim.dir/src/Module.cpp.obj	605b09a32664137d
-675	4304	7693630786856708	CMakeFiles/DigitalSim.dir/mainwindow.cpp.obj	edea4c8ffdc902a5
-654	4355	7693630787366713	CMakeFiles/DigitalSim.dir/DigitalSim_autogen/mocs_compilation.cpp.obj	663f963d5ef0a8a5
-665	4440	7693630788236682	CMakeFiles/DigitalSim.dir/main.cpp.obj	3d9318ba88ddba1d
-4441	4893	7693630792518557	DigitalSim.exe	56f399bcaed596d6
+10	160	7699059005579874	DigitalSim_autogen/timestamp	6fe3e14bead137de
+10	160	7699059005579874	DigitalSim_autogen/mocs_compilation.cpp	6fe3e14bead137de
+10	160	7699059005579874	C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/out/build/debug/DigitalSim_autogen/timestamp	6fe3e14bead137de
+10	160	7699059005579874	C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/out/build/debug/DigitalSim_autogen/mocs_compilation.cpp	6fe3e14bead137de
+162	249	7699059007059869	CMakeFiles/DigitalSim.dir/DigitalSim_autogen/mocs_compilation.cpp.obj	65f90b4a5b1c4256
+193	681	7699059011369904	CMakeFiles/DigitalSim.dir/src/Gate.cpp.obj	5e687727674f5ab8
+182	828	7699059012829871	CMakeFiles/DigitalSim.dir/src/Module.cpp.obj	b326e8e9167a09a1
+9	191	7699059463646730	DigitalSim_autogen/timestamp	6fe3e14bead137de
+9	191	7699059463646730	DigitalSim_autogen/mocs_compilation.cpp	6fe3e14bead137de
+9	191	7699059463646730	C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/out/build/debug/DigitalSim_autogen/timestamp	6fe3e14bead137de
+9	191	7699059463646730	C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/out/build/debug/DigitalSim_autogen/mocs_compilation.cpp	6fe3e14bead137de
+196	1034	7699059509351839	CMakeFiles/DigitalSim.dir/main.cpp.obj	e7e058978ca1c45a
+1034	1506	7699059513872051	DigitalSim.exe	9e9c10edd99ebdc4

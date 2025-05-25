@@ -39,7 +39,7 @@ add_executable(${PROJECT_NAME}
     main.cpp
     # Add additional source files here as needed, e.g.:
     # src/Student.cpp
- "mainwindow.ui" "mainwindow.h" "mainwindow.cpp" "main.cpp" "include/Gate.h" "include/ANDGate.h" "include/ORGate.h"  "include/Connector.h" "include/LED.h" "src/Module.cpp" "src/Gate.cpp")
+ "main.cpp" "include/Gate.h" "include/ANDGate.h" "include/ORGate.h"  "include/Connector.h" "include/LED.h" "src/Module.cpp" "src/Gate.cpp")
 
 # Specify include directories for header files
 target_include_directories(${PROJECT_NAME} PRIVATE

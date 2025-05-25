@@ -39,7 +39,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSim/out/build/x64-Debug"
+			"value" : "c:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/out/build/debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -123,7 +123,7 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "No help, variable specified on the command line."
+					"value" : "CXX compiler"
 				}
 			],
 			"type" : "FILEPATH",
@@ -139,11 +139,11 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "Flags used by the CXX compiler during all build types."
+					"value" : "No help, variable specified on the command line."
 				}
 			],
 			"type" : "STRING",
-			"value" : "/DWIN32 /D_WINDOWS /GR /EHsc"
+			"value" : "-DQT_QML_DEBUG"
 		},
 		{
 			"name" : "CMAKE_CXX_FLAGS_DEBUG",
@@ -355,7 +355,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSim/out/build/x64-Debug/CMakeFiles/pkgRedirects"
+			"value" : "C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/out/build/debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -451,7 +451,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSim"
+			"value" : "C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource"
 		},
 		{
 			"name" : "CMAKE_INSTALL_BINDIR",
@@ -651,11 +651,11 @@
 			[
 				{
 					"name" : "HELPSTRING",
-					"value" : "No help, variable specified on the command line."
+					"value" : "Install path prefix, prepended onto install directories."
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSim/out/install/x64-Debug"
+			"value" : "C:/Program Files (x86)/DigitalSim"
 		},
 		{
 			"name" : "CMAKE_INSTALL_RUNSTATEDIR",
@@ -868,6 +868,18 @@
 			],
 			"type" : "INTERNAL",
 			"value" : "1"
+		},
+		{
+			"name" : "CMAKE_PREFIX_PATH",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "No help, variable specified on the command line."
+				}
+			],
+			"type" : "STRING",
+			"value" : "C:/Qt/6.9.0/msvc2022_64"
 		},
 		{
 			"name" : "CMAKE_PROJECT_DESCRIPTION",
@@ -1315,7 +1327,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSim/out/build/x64-Debug"
+			"value" : "C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/out/build/debug"
 		},
 		{
 			"name" : "DigitalSim_IS_TOP_LEVEL",
@@ -1339,7 +1351,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSim"
+			"value" : "C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource"
 		},
 		{
 			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_Threads",
@@ -1411,7 +1423,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Qt/6.9.0/mingw_64/lib/cmake/Qt6"
+			"value" : "C:/Qt/6.9.0/msvc2022_64/lib/cmake/Qt6"
 		},
 		{
 			"name" : "QT_FEATURE_abstractbutton",
@@ -1951,7 +1963,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "OFF"
+			"value" : "ON"
 		},
 		{
 			"name" : "QT_FEATURE_cross_compile",
@@ -2155,7 +2167,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "OFF"
+			"value" : "ON"
 		},
 		{
 			"name" : "QT_FEATURE_debug_and_release",
@@ -2167,7 +2179,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "OFF"
+			"value" : "ON"
 		},
 		{
 			"name" : "QT_FEATURE_desktopservices",
@@ -2299,7 +2311,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "OFF"
+			"value" : "ON"
 		},
 		{
 			"name" : "QT_FEATURE_dladdr",
@@ -3499,7 +3511,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "ON"
+			"value" : "OFF"
 		},
 		{
 			"name" : "QT_FEATURE_libudev",
@@ -3772,6 +3784,18 @@
 				{
 					"name" : "HELPSTRING",
 					"value" : "Qt feature: movie (from target Qt6::Gui)"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "ON"
+		},
+		{
+			"name" : "QT_FEATURE_msvc_obj_debug_info",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Qt feature: msvc_obj_debug_info (from target Qt6::Core)"
 				}
 			],
 			"type" : "INTERNAL",
@@ -4147,7 +4171,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "ON"
+			"value" : "OFF"
 		},
 		{
 			"name" : "QT_FEATURE_posix_shm",
@@ -4411,7 +4435,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "ON"
+			"value" : "OFF"
 		},
 		{
 			"name" : "QT_FEATURE_reduce_relocations",
@@ -4555,7 +4579,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "ON"
+			"value" : "OFF"
 		},
 		{
 			"name" : "QT_FEATURE_sessionmanager",
@@ -4831,7 +4855,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "ON"
+			"value" : "OFF"
 		},
 		{
 			"name" : "QT_FEATURE_stack_protector",
@@ -4843,7 +4867,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "ON"
+			"value" : "OFF"
 		},
 		{
 			"name" : "QT_FEATURE_stackedwidget",
@@ -6103,7 +6127,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Qt/6.9.0/mingw_64/lib/cmake/Qt6CorePrivate"
+			"value" : "C:/Qt/6.9.0/msvc2022_64/lib/cmake/Qt6CorePrivate"
 		},
 		{
 			"name" : "Qt6CoreTools_DIR",
@@ -6115,7 +6139,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Qt/6.9.0/mingw_64/lib/cmake/Qt6CoreTools"
+			"value" : "C:/Qt/6.9.0/msvc2022_64/lib/cmake/Qt6CoreTools"
 		},
 		{
 			"name" : "Qt6Core_DIR",
@@ -6127,7 +6151,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Qt/6.9.0/mingw_64/lib/cmake/Qt6Core"
+			"value" : "C:/Qt/6.9.0/msvc2022_64/lib/cmake/Qt6Core"
 		},
 		{
 			"name" : "Qt6EntryPointPrivate_DIR",
@@ -6139,7 +6163,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Qt/6.9.0/mingw_64/lib/cmake/Qt6EntryPointPrivate"
+			"value" : "C:/Qt/6.9.0/msvc2022_64/lib/cmake/Qt6EntryPointPrivate"
 		},
 		{
 			"name" : "Qt6GuiPrivate_DIR",
@@ -6151,7 +6175,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Qt/6.9.0/mingw_64/lib/cmake/Qt6GuiPrivate"
+			"value" : "C:/Qt/6.9.0/msvc2022_64/lib/cmake/Qt6GuiPrivate"
 		},
 		{
 			"name" : "Qt6GuiTools_DIR",
@@ -6163,7 +6187,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Qt/6.9.0/mingw_64/lib/cmake/Qt6GuiTools"
+			"value" : "C:/Qt/6.9.0/msvc2022_64/lib/cmake/Qt6GuiTools"
 		},
 		{
 			"name" : "Qt6Gui_DIR",
@@ -6175,7 +6199,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Qt/6.9.0/mingw_64/lib/cmake/Qt6Gui"
+			"value" : "C:/Qt/6.9.0/msvc2022_64/lib/cmake/Qt6Gui"
 		},
 		{
 			"name" : "Qt6WidgetsPrivate_DIR",
@@ -6187,7 +6211,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Qt/6.9.0/mingw_64/lib/cmake/Qt6WidgetsPrivate"
+			"value" : "C:/Qt/6.9.0/msvc2022_64/lib/cmake/Qt6WidgetsPrivate"
 		},
 		{
 			"name" : "Qt6WidgetsTools_DIR",
@@ -6199,7 +6223,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Qt/6.9.0/mingw_64/lib/cmake/Qt6WidgetsTools"
+			"value" : "C:/Qt/6.9.0/msvc2022_64/lib/cmake/Qt6WidgetsTools"
 		},
 		{
 			"name" : "Qt6Widgets_DIR",
@@ -6211,7 +6235,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Qt/6.9.0/mingw_64/lib/cmake/Qt6Widgets"
+			"value" : "C:/Qt/6.9.0/msvc2022_64/lib/cmake/Qt6Widgets"
 		},
 		{
 			"name" : "Qt6ZlibPrivate_DIR",
@@ -6223,7 +6247,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Qt/6.9.0/mingw_64/lib/cmake/Qt6ZlibPrivate"
+			"value" : "C:/Qt/6.9.0/msvc2022_64/lib/cmake/Qt6ZlibPrivate"
 		},
 		{
 			"name" : "Qt6_DIR",
@@ -6235,7 +6259,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Qt/6.9.0/mingw_64/lib/cmake/Qt6"
+			"value" : "C:/Qt/6.9.0/msvc2022_64/lib/cmake/Qt6"
 		},
 		{
 			"name" : "Vulkan_GLSLANG_VALIDATOR_EXECUTABLE",
@@ -6311,7 +6335,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Qt/6.9.0/mingw_64/bin/windeployqt.exe"
+			"value" : "C:/Qt/6.9.0/msvc2022_64/bin/windeployqt.exe"
 		},
 		{
 			"name" : "_GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX",
@@ -6323,43 +6347,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSim/out/install/x64-Debug"
-		},
-		{
-			"name" : "lab1_BINARY_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSim/out/build/x64-Debug"
-		},
-		{
-			"name" : "lab1_IS_TOP_LEVEL",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "ON"
-		},
-		{
-			"name" : "lab1_SOURCE_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSim"
+			"value" : "C:/Program Files (x86)/DigitalSim"
 		}
 	],
 	"kind" : "cache",

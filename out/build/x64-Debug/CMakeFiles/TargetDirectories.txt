@@ -1,5 +1,0 @@
-C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSim/out/build/x64-Debug/CMakeFiles/DigitalSim.dir
-C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSim/out/build/x64-Debug/CMakeFiles/edit_cache.dir
-C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSim/out/build/x64-Debug/CMakeFiles/rebuild_cache.dir
-C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSim/out/build/x64-Debug/CMakeFiles/DigitalSim_autogen_timestamp_deps.dir
-C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSim/out/build/x64-Debug/CMakeFiles/DigitalSim_autogen.dir

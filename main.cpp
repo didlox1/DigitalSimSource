@@ -6,10 +6,6 @@
 
 // TODO: Automatization of adding gates
 
-#include "mainwindow.h"
-
-#include <QApplication>
-
 int main(int argc, char* argv[]) { //Benchmark
     Module m;
     //Creating ANDGate
@@ -27,10 +23,6 @@ int main(int argc, char* argv[]) { //Benchmark
     //Propagate an output 
     g1->propagateOutput();
     std::cout << out.getState() << std::endl;  // (1 AND 1) Should print 1 (HIGH)
-
-    QApplication a(argc, argv);
-    MainWindow w;
-    w.show();
-    return a.exec();
-
+    
+    return 0;
 }
