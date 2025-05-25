@@ -1,3 +1,15 @@
+# Ignore Visual Studio generated files
+.vs/
+*.ipch
+*.pdb
+*.obj
+*.sdf
+*.opensdf
+*.vcxproj.user
+*.VC.db
+*.ilk
+
+
 # Prerequisites
 *.d
 
