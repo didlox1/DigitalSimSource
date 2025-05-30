@@ -220,14 +220,24 @@ DigitalSim_autogen/timestamp: \
 	C:/Qt/6.9.0/msvc2022_64/lib/cmake/Qt6ZlibPrivate/Qt6ZlibPrivateVersionlessAliasTargets.cmake \
 	C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/CMakeLists.txt \
 	C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/include/ANDGate.h \
+	C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/include/BufforGate.h \
+	C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/include/Clock.h \
 	C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/include/Connector.h \
 	C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/include/Gate.h \
-	C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/include/LED.h \
+	C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/include/Module.h \
+	C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/include/NOTGate.h \
 	C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/include/ORGate.h \
+	C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/include/State.h \
+	C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/include/XORGate.h \
 	C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/main.cpp \
 	C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/out/build/debug/CMakeFiles/3.29.5-msvc4/CMakeCXXCompiler.cmake \
 	C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/out/build/debug/CMakeFiles/3.29.5-msvc4/CMakeRCCompiler.cmake \
 	C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/out/build/debug/CMakeFiles/3.29.5-msvc4/CMakeSystem.cmake \
+	C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/src/ANDGate.cpp \
+	C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/src/Clock.cpp \
+	C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/src/Connector.cpp \
 	C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/src/Gate.cpp \
 	C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/src/Module.cpp \
+	C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/src/ORGate.cpp \
+	C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/src/XORGate.cpp \
 	C:/Program\ Files/Microsoft\ Visual\ Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe

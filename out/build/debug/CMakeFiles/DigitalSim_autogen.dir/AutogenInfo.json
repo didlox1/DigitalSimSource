@@ -351,6 +351,18 @@
 			null
 		],
 		[
+			"C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/include/BufforGate.h",
+			"MU",
+			"6YEA5652QU/moc_BufforGate.cpp",
+			null
+		],
+		[
+			"C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/include/Clock.h",
+			"MU",
+			"6YEA5652QU/moc_Clock.cpp",
+			null
+		],
+		[
 			"C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/include/Connector.h",
 			"MU",
 			"6YEA5652QU/moc_Connector.cpp",
@@ -363,15 +375,33 @@
 			null
 		],
 		[
-			"C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/include/LED.h",
+			"C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/include/Module.h",
 			"MU",
-			"6YEA5652QU/moc_LED.cpp",
+			"6YEA5652QU/moc_Module.cpp",
+			null
+		],
+		[
+			"C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/include/NOTGate.h",
+			"MU",
+			"6YEA5652QU/moc_NOTGate.cpp",
 			null
 		],
 		[
 			"C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/include/ORGate.h",
 			"MU",
 			"6YEA5652QU/moc_ORGate.cpp",
+			null
+		],
+		[
+			"C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/include/State.h",
+			"MU",
+			"6YEA5652QU/moc_State.cpp",
+			null
+		],
+		[
+			"C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/include/XORGate.h",
+			"MU",
+			"6YEA5652QU/moc_XORGate.cpp",
 			null
 		]
 	],
@@ -437,12 +467,37 @@
 			null
 		],
 		[
+			"C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/src/ANDGate.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/src/Clock.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/src/Connector.cpp",
+			"MU",
+			null
+		],
+		[
 			"C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/src/Gate.cpp",
 			"MU",
 			null
 		],
 		[
 			"C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/src/Module.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/src/ORGate.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/src/XORGate.cpp",
 			"MU",
 			null
 		]

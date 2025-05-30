@@ -1,20 +1,13 @@
 #pragma once
-
-#include <vector>
-#include <map>
-
 #include "Gate.h"
+
+// TODO: Change setState() to setTimeline(outState) ????
+// where outState = vector<pair<time + porpagationTime, State>>
+// where "+" means shifting it by selected value
 
 class ANDGate : public Gate {
 private:
 public:
 	ANDGate() : Gate() {};
-	void propagateOutput() override {
-		State outState = HIGH_IMPEDANCE; //Dodaæ error handling
-		if (in.first.connected() && in.second.connected()) {
-			if (in.first.getState() == HIGH && in.second.getState() == HIGH) outState = HIGH;
-			else outState = LOW;
-		}
-		out.setState(outState);
-	};
+	void propagateOutput() override;
 };

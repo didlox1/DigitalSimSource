@@ -36,10 +36,29 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
 # Define the executable and list source files
 add_executable(${PROJECT_NAME}
-    main.cpp
+    #main.cpp
     # Add additional source files here as needed, e.g.:
     # src/Student.cpp
- "main.cpp" "include/Gate.h" "include/ANDGate.h" "include/ORGate.h"  "include/Connector.h" "include/LED.h" "src/Module.cpp" "src/Gate.cpp")
+    #in main folder
+    "main.cpp"
+    #in /include folder
+    "include/Gate.h"
+    "include/ANDGate.h"
+    "include/ORGate.h"
+    "include/Connector.h"
+    "include/XORGate.h" 
+    "include/NOTGate.h"
+    "include/BufforGate.h"
+    "include/Clock.h"
+    "include/Module.h"
+    #in /src folder
+    "src/Module.cpp"
+    "src/Gate.cpp"
+    "src/Clock.cpp"
+    "src/Connector.cpp"
+    "src/ANDGate.cpp" 
+    "src/ORGate.cpp" 
+    "src/XORGate.cpp" "include/State.h")
 
 # Specify include directories for header files
 target_include_directories(${PROJECT_NAME} PRIVATE

@@ -4,9 +4,9 @@
 // where "+" means shifting it by selected value
 #include "Gate.h"
 // TODO: Add more Gates
-class ORGate : public Gate {
+class XORGate : public Gate {
 private:
 public:
-	ORGate() : Gate() {};
+	XORGate() : Gate() {};
 	void propagateOutput() override;
 };

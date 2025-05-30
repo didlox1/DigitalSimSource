@@ -1,41 +1,30 @@
 #pragma once
-
+#include "State.h"
 #include <vector>
-#include <map>
+#include <utility>
+
+class Clock;
 
 enum IO: char
 {
 	INPUT,
 	OUTPUT
 };
-// TODO: Add more functions to ERROR and HIGH_IMPEDANCE handling
-enum State: int {
-	LOW,
-	HIGH,
-	HIGH_IMPEDANCE,
-	ERROR
-};
 
 class Connector {
 private:
-	State m_state{ State::HIGH_IMPEDANCE };
-	State* m_connectedState{ nullptr };
-	int m_id;
+	//State m_state{ State::HIGH_IMPEDANCE };
+	//State* m_connectedState{ nullptr };
+	std::vector<std::pair<int, State>> m_state;
+	std::vector<std::pair<int, State>>* m_connectedState{ nullptr };
 	IO m_type;
 public:
-	Connector(IO type) : m_type(type) {};
-	void setState(State state) { m_state = state; };
-	State getState() { 
-		if (m_connectedState) return *m_connectedState;
-		else return m_state;
-	};
-	void connectTo(Connector& other) {
-		if (m_type == IO::OUTPUT && other.m_type == IO::INPUT) {
-			other.m_connectedState = &m_state;
-		}
-	}
-	bool connected() {
-		if (m_type == HIGH || m_type == LOW) return true;
-		return false;
-	}
+	Connector(IO type);
+	void setState(State state);
+	void setStateTimeline(std::vector<std::pair<int, State>> states);
+	void connectClock(Clock& c);
+	std::vector<std::pair<int, State>> getState();
+	void connectTo(Connector& other);
+	void disconnect();
+	bool connected() const;
 };

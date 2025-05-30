@@ -1,12 +1,12 @@
-#pragma once
+#include "Gate.h"
+
 // TODO: Change setState() to setTimeline(outState)
 // where outState = vector<pair<time + porpagationTime, State>>
 // where "+" means shifting it by selected value
-#include "Gate.h"
-// TODO: Add more Gates
-class ORGate : public Gate {
+
+class NOTGate: public Gate{
 private:
 public:
-	ORGate() : Gate() {};
+	NOTGate() : Gate() {}; //dodac Gate(int n) gdzie n to liczba wejsc bramki
 	void propagateOutput() override;
 };
