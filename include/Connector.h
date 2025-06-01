@@ -7,8 +7,8 @@ class Clock;
 
 enum IO: char
 {
-	INPUT,
-	OUTPUT
+	INP,
+	OUTP
 };
 
 class Connector {

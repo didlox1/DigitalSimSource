@@ -9,4 +9,5 @@ private:
 public:
 	XORGate() : Gate() {};
 	void propagateOutput() override;
+	std::string returnType() override;
 };

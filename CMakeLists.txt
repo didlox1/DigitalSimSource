@@ -58,7 +58,7 @@ add_executable(${PROJECT_NAME}
     "src/Connector.cpp"
     "src/ANDGate.cpp" 
     "src/ORGate.cpp" 
-    "src/XORGate.cpp" "include/State.h")
+    "src/XORGate.cpp" "include/State.h" "include/Menu.h" "src/Menu.cpp")
 
 # Specify include directories for header files
 target_include_directories(${PROJECT_NAME} PRIVATE

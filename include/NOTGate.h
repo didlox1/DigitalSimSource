@@ -9,4 +9,5 @@ private:
 public:
 	NOTGate() : Gate() {}; //dodac Gate(int n) gdzie n to liczba wejsc bramki
 	void propagateOutput() override;
+	std::string returnType() override;
 };

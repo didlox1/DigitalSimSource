@@ -27,5 +27,11 @@ void ORGate::propagateOutput() {
         State result = (stateA == LOW && stateB == LOW) ? LOW : HIGH;
         output.emplace_back(time + m_propagationDelay, result);
     }
+    output.erase(output.begin()); // TODO: validate if always works - created to erase first {0, 0} pair
     out.setStateTimeline(output);
-};
+}
+std::string ORGate::returnType()
+{
+    return "OR Gate";
+}
+;

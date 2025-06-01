@@ -25,7 +25,7 @@ std::vector<std::pair<int, State>> Connector::getState() {
 }
 //connecting input from "other" to the output "m_state"
 void Connector::connectTo(Connector& other) {
-	if (m_type == IO::OUTPUT && other.m_type == IO::INPUT) {
+	if (m_type == IO::OUTP && other.m_type == IO::INP) {
 		other.m_connectedState = &m_state;  
 	}
 }
@@ -34,7 +34,8 @@ void Connector::connectTo(Connector& other) {
 void Connector::disconnect() {
 	m_connectedState = nullptr;
 }
+
 bool Connector::connected() const {
-	if (m_type == HIGH || m_type == LOW) return true;
+	if (m_state.size() != 0) return true;
 	return false;
 }

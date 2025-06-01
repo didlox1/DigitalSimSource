@@ -2,6 +2,7 @@
 
 #include <vector>
 #include <map>
+#include <string>
 
 #include "Connector.h"
 
@@ -14,10 +15,11 @@ protected:
 	Connector out;
 	
 public:
-	Gate(int propagationDelay = 0) : m_id(m_gates_count), m_propagationDelay(propagationDelay), in(IO::INPUT, IO::INPUT), out(IO::OUTPUT) { m_gates_count++; };
+	Gate(int propagationDelay = 0) : m_id(m_gates_count), m_propagationDelay(propagationDelay), in(IO::INP, IO::INP), out(IO::OUTP) { m_gates_count++; };
 	std::pair<Connector, Connector>& getInput() { return in; };
 	Connector& getOutputHandler() { return out; };
 	int getID() const { return m_id; };
 	// TODO: Add propagation time
 	virtual void propagateOutput() = 0;
+	virtual std::string returnType();
 };

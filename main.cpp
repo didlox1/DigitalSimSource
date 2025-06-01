@@ -1,4 +1,5 @@
 #include "Module.h"
+#include "Menu.h"
 #include <iostream>
 #include <utility>
 #include "ANDGate.h"
@@ -10,6 +11,7 @@
 // TODO: Automatization of adding gates
 
 int main(int argc, char* argv[]) { //Benchmark
+    /*
     Module m;
     //CreatinWg ANDGate
     std::shared_ptr<ANDGate> and1 = std::make_shared<ANDGate>();
@@ -28,6 +30,9 @@ int main(int argc, char* argv[]) { //Benchmark
     //Propagate an output 
     g1->propagateOutput();
     //std::cout << out.getState() << std::endl;  // (1 AND 1) Should print 1 (HIGH)
-    
+    */
+    Menu m;
+    m.mainMenu();
+
     return 0;
 }

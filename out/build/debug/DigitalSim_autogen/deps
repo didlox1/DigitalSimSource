@@ -224,6 +224,7 @@ DigitalSim_autogen/timestamp: \
 	C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/include/Clock.h \
 	C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/include/Connector.h \
 	C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/include/Gate.h \
+	C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/include/Menu.h \
 	C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/include/Module.h \
 	C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/include/NOTGate.h \
 	C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/include/ORGate.h \
@@ -237,6 +238,7 @@ DigitalSim_autogen/timestamp: \
 	C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/src/Clock.cpp \
 	C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/src/Connector.cpp \
 	C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/src/Gate.cpp \
+	C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/src/Menu.cpp \
 	C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/src/Module.cpp \
 	C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/src/ORGate.cpp \
 	C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/src/XORGate.cpp \

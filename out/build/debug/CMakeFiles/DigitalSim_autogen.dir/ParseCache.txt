@@ -18,3 +18,5 @@ C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/src/ANDGate
 C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/src/ORGate.cpp
 C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/src/XORGate.cpp
 C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/include/State.h
+C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/include/Menu.h
+C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/src/Menu.cpp

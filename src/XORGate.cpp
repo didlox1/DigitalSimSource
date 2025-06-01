@@ -27,5 +27,11 @@ void XORGate::propagateOutput() {
         State result = (stateA != stateB) ? HIGH : LOW;
         output.emplace_back(time + m_propagationDelay, result);
     }
+    output.erase(output.begin()); // TODO: validate if always works - created to erase first {0, 0} pair
     out.setStateTimeline(output);
-};
+}
+std::string XORGate::returnType()
+{
+    return "XOR Gate";
+}
+;

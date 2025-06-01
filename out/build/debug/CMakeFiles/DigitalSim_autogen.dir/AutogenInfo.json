@@ -375,6 +375,12 @@
 			null
 		],
 		[
+			"C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/include/Menu.h",
+			"MU",
+			"6YEA5652QU/moc_Menu.cpp",
+			null
+		],
+		[
 			"C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/include/Module.h",
 			"MU",
 			"6YEA5652QU/moc_Module.cpp",
@@ -483,6 +489,11 @@
 		],
 		[
 			"C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/src/Gate.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/src/Menu.cpp",
 			"MU",
 			null
 		],

@@ -10,4 +10,5 @@ private:
 public:
 	ANDGate() : Gate() {};
 	void propagateOutput() override;
+	std::string returnType() override;
 };

@@ -9,4 +9,5 @@ private:
 public:
 	ORGate() : Gate() {};
 	void propagateOutput() override;
+	std::string returnType() override;
 };
