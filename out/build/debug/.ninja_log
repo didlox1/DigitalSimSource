@@ -10,3 +10,11 @@
 3	1539	7706924253418403	CMakeFiles/DigitalSim.dir/main.cpp.obj	87265f326abb87f
 69	1426	7706924252291063	CMakeFiles/DigitalSim.dir/src/Menu.cpp.obj	19c0ec2df635172f
 1539	1739	7706924254986079	DigitalSim.exe	f50a4f508cab4915
+23	635	7706927067596717	CMakeFiles/DigitalSim.dir/src/Clock.cpp.obj	bd4ff4ef5387aec0
+35	678	7706927068096617	CMakeFiles/DigitalSim.dir/src/Connector.cpp.obj	136563d53f9bfbdc
+49	812	7706927069396672	CMakeFiles/DigitalSim.dir/src/ANDGate.cpp.obj	451b0c2f83ae5cea
+12	991	7706927071206024	CMakeFiles/DigitalSim.dir/src/Module.cpp.obj	72ec190864de3500
+2	1207	7706927073304748	CMakeFiles/DigitalSim.dir/main.cpp.obj	87265f326abb87f
+62	1230	7706927073604760	CMakeFiles/DigitalSim.dir/src/Menu.cpp.obj	19c0ec2df635172f
+74	1235	7706927073704754	CMakeFiles/DigitalSim.dir/src/File.cpp.obj	5b9aacee3feb03e8
+1236	1504	7706927075907382	DigitalSim.exe	f50a4f508cab4915

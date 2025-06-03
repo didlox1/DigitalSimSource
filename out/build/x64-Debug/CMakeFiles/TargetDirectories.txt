@@ -1,0 +1,3 @@
+C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/out/build/x64-Debug/CMakeFiles/DigitalSim.dir
+C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/out/build/x64-Debug/CMakeFiles/edit_cache.dir
+C:/Users/Pimpek/Desktop/AGH/Semestr_2/Programowanie/DigitalSimSource/out/build/x64-Debug/CMakeFiles/rebuild_cache.dir
