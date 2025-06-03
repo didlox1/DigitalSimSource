@@ -1,18 +1,16 @@
 #include "ANDGate.h"
 
 void ANDGate::propagateOutput() {
-    // TODO: dodac warunek ze podlaczone
     if (in.first.connected() && in.second.connected()) {
-        // else throw exception
-        std::vector<std::pair<int, State>> output;
-        const std::vector<std::pair<int, State>>& a = in.first.getState();
-        const std::vector<std::pair<int, State>>& b = in.second.getState();
+        std::vector<std::pair<double, State>> output;
+        const std::vector<std::pair<double, State>>& a = in.first.getState();
+        const std::vector<std::pair<double, State>>& b = in.second.getState();
 
         size_t i = 0, j = 0;
         State stateA = LOW, stateB = LOW;
 
         while (i < a.size() || j < b.size()) {
-            int time;
+            double time;
             if (i < a.size() && (j >= b.size() || a[i].first <= b[j].first)) {
                 time = a[i].first;
                 stateA = a[i].second;
@@ -24,14 +22,18 @@ void ANDGate::propagateOutput() {
                 j++;
             }
             State result = (stateA == HIGH && stateB == HIGH) ? HIGH : LOW;
-            output.emplace_back(time + m_propagationDelay, result);
+            output.push_back(std::pair(time + m_propagationDelay, result));
         }
-        output.erase(output.begin()); // TODO: validate if always works - created to erase first {0, 0} pair
+        output.erase(output.begin()); 
         out.setStateTimeline(output);
     }
 }
 std::string ANDGate::returnType()
 {
     return "AND Gate";
+}
+int ANDGate::getNumberOfInputs()
+{
+    return 2;
 }
 ;

@@ -13,17 +13,15 @@ enum IO: char
 
 class Connector {
 private:
-	//State m_state{ State::HIGH_IMPEDANCE };
-	//State* m_connectedState{ nullptr };
-	std::vector<std::pair<int, State>> m_state;
-	std::vector<std::pair<int, State>>* m_connectedState{ nullptr };
+	std::vector<std::pair<double, State>> m_state;
+	std::vector<std::pair<double, State>>* m_connectedState{ nullptr };
 	IO m_type;
 public:
 	Connector(IO type);
 	void setState(State state);
-	void setStateTimeline(std::vector<std::pair<int, State>> states);
+	void setStateTimeline(std::vector<std::pair<double, State>> states);
 	void connectClock(Clock& c);
-	std::vector<std::pair<int, State>> getState();
+	std::vector<std::pair<double, State>> getState();
 	void connectTo(Connector& other);
 	void disconnect();
 	bool connected() const;

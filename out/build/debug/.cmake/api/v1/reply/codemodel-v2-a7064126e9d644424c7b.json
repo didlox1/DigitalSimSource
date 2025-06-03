@@ -15,9 +15,7 @@
 					"source" : ".",
 					"targetIndexes" : 
 					[
-						0,
-						1,
-						2
+						0
 					]
 				}
 			],
@@ -32,9 +30,7 @@
 					"name" : "DigitalSim",
 					"targetIndexes" : 
 					[
-						0,
-						1,
-						2
+						0
 					]
 				}
 			],
@@ -43,22 +39,8 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "DigitalSim::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-DigitalSim-Debug-4f7f7a6f1918d3358a7f.json",
+					"jsonFile" : "target-DigitalSim-Debug-8f0bf8bfd57ed913cd9a.json",
 					"name" : "DigitalSim",
-					"projectIndex" : 0
-				},
-				{
-					"directoryIndex" : 0,
-					"id" : "DigitalSim_autogen::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-DigitalSim_autogen-Debug-14ded30ca38d8823e213.json",
-					"name" : "DigitalSim_autogen",
-					"projectIndex" : 0
-				},
-				{
-					"directoryIndex" : 0,
-					"id" : "DigitalSim_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-DigitalSim_autogen_timestamp_deps-Debug-be7432c79e6d9e0bd1ff.json",
-					"name" : "DigitalSim_autogen_timestamp_deps",
 					"projectIndex" : 0
 				}
 			]
