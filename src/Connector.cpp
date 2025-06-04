@@ -34,8 +34,8 @@ void Connector::connectTo(Connector& other) {
 //disconnecting input of gate
 void Connector::disconnect() {
 	m_connectedState = nullptr;
+	m_state = { {0, State::HIGH_IMPEDANCE} };
 	// Initialize with default LOW state when disconnected
-	m_state = { {0, State::LOW} };
 }
 
 bool Connector::connected() const {

@@ -228,22 +228,40 @@ void Menu::viewAllComponents()
     std::cin.get();
 }
 
-void Menu::deleteComponent()
+void Menu::disconnectComponent()
 {
     std::string name;
+    int inputNumber{};
+    int numberOfInputs{};
     clearScreen();
     const auto& gates = m_module.returnGates();
-    const auto& clocks = m_module.returnClocks();
     listGates(gates);
-    listClocks(clocks);
     do {
-        std::cout << "Select component to remove (write a name):\n";
+        std::cout << "Select gate to disconnect input from:\n";
         getline(std::cin, name);
-        if (gates.find(name) != gates.end() || clocks.find(name) != clocks.end()) break;
+        if (gates.find(name) != gates.end()) break;
         else if (name.empty()) return;
         else std::cout << "Invalid name.\n";
     } while (name != "");
-    m_module.remove(name);
+    numberOfInputs = gates.find(name)->second->getNumberOfInputs();
+    if (numberOfInputs == 1) {
+        m_module.disconnectInput(name, 1);
+        return;
+    }
+    do {
+        clearScreen();
+        std::cout << "Select input number:\n";
+        std::cout << "1. First\n";
+        std::cout << "2. Second\n";
+        std::cout << "0. Return\n";
+        inputNumber = getIntegerInput();
+        if (inputNumber == 1 || inputNumber == 2) {
+            m_module.disconnectInput(name, inputNumber);
+            return;
+        }
+        else if (inputNumber == 0) return;
+        else std::cout << "Invalid option.\n";
+    } while (true);
 }
 
 void Menu::saveModule()
@@ -284,13 +302,13 @@ void Menu::mainMenu()
     int choice{};
     do {
         clearScreen();
-        std::cout << "=== Digital Logic Simulator ===\n";
+        std::cout << "=== DigitalSim ===\n";
         std::cout << "1. Add Component\n";
         std::cout << "2. Connect Connectors\n";
         std::cout << "3. Set Constant Input\n";
         std::cout << "4. Print Output\n";
         std::cout << "5. Print All Components\n";
-        std::cout << "6. Remove Component\n";
+        std::cout << "6. Disconnect Input From Gate\n";
         std::cout << "7. Save Module\n";
         std::cout << "8. Open Module\n";
         std::cout << "0. Exit\n> ";
@@ -308,7 +326,7 @@ void Menu::mainMenu()
         case 5: 
             viewAllComponents(); break;
         case 6:
-            deleteComponent(); break;
+            disconnectComponent(); break;
         case 7:
             saveModule(); break;
         case 8:

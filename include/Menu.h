@@ -22,7 +22,7 @@ private:
     void setConstantInput();
     void viewComponentOutput();
     void viewAllComponents();
-    void deleteComponent();
+    void disconnectComponent();
     void saveModule();
     void openModule();
     void listGates(const auto& gates);

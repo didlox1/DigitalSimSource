@@ -1,7 +1,7 @@
 #include "Module.h"
 #include "Clock.h"
 
-void Module::addGate(std::string name, Type gateType, int propagationTime)
+void Module::addGate(const std::string& name, Type gateType, int propagationTime)
 {
 	switch (gateType) {
 	case Type::AND:
@@ -20,28 +20,11 @@ void Module::addGate(std::string name, Type gateType, int propagationTime)
 	
 }
 
-void Module::addClock(std::string name, int period, int endTime)
+void Module::addClock(const std::string& name, int period, int endTime)
 {
 	m_clocks[name] = Clock(period, endTime);
 }
 
-Gate& Module::getGate(std::string name)
-{
-	auto gate = m_gates.find(name);
-	if (gate != m_gates.end()) {
-		return *(gate->second);
-	}
-	else throw("Gate not found");
-}
-
-Clock& Module::getClock(std::string name)
-{
-	auto clock = m_clocks.find(name);
-	if (clock != m_clocks.end()) {
-		return clock->second;
-	}
-	else throw("Clock not found");
-}
 
 void Module::connect(Connection c)
 {
@@ -120,36 +103,14 @@ std::vector<Connection>& Module::returnConnections()
 	return m_connections;
 }
 
-void Module::remove(const std::string& name)
+void Module::disconnectInput (const std::string& name, int inputNumber)
 {
-	// TODO: validate
-	/*
-	auto it1 = m_connections.begin();
-	while (it1 != m_connections.end()) {
-		if ((name == it1->destGate) || (name == it1->srcGate)) {
-			m_connections.erase(it1); 
-		}
-		else {
-			++it1;
-		}
-	}
-	auto it2 = m_constInputs.begin();
-	while (it2 != m_constInputs.end()) {
-		if (name == it2->destGate) {
-			m_constInputs.erase(it2);
-		}
-		else {
-			++it2;
-		}
-	}
 	if (m_gates.find(name) != m_gates.end()) {
-		m_gates.erase(name); // TODO: try to correct clock class;
+		const auto& gate = m_gates.find(name)->second;
+		if(inputNumber == 1) gate->getInput().first.disconnect();
+		if (inputNumber == 2) gate->getInput().second.disconnect();
 	}
-	if (m_clocks.find(name) != m_clocks.end()) {
-		m_clocks.erase(name);
-	}
-	*/
-	// Remove connections
+	propagateAll();
 }
 
 void Module::propagateAll()

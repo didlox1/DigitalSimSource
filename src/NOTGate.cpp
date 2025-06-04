@@ -6,6 +6,7 @@ void NOTGate::propagateOutput()
         std::vector<std::pair<double, State>> output;
         const std::vector<std::pair<double, State>>& a = in.first.getState();
 
+
         size_t i = 0;
         State stateA = LOW;
 

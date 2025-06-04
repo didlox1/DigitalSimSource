@@ -6,6 +6,7 @@ void XORGate::propagateOutput() {
         const std::vector<std::pair<double, State>>& a = in.first.getState();
         const std::vector<std::pair<double, State>>& b = in.second.getState();
 
+
         size_t i = 0, j = 0;
         State stateA = LOW, stateB = LOW;
 

@@ -37,10 +37,8 @@ private:
 	std::vector<Connection> m_connections;
 	std::vector<ConstInput> m_constInputs; //stores name and const State
 public:
-	void addGate(std::string name, Type gateType, int propagationTime = 0);
-	void addClock(std::string name, int period = 0, int endTime = 0);
-	Gate& getGate(std::string name);
-	Clock& getClock(std::string name);
+	void addGate(const std::string& name, Type gateType, int propagationTime);
+	void addClock(const std::string&, int period, int endTime);
 	std::map<std::string, std::unique_ptr<Gate>>& returnGates();
 	std::map<std::string, Clock>& returnClocks();
 	std::vector<ConstInput>& returnConstInputs();
@@ -49,6 +47,6 @@ public:
 	void connect(Connection c);
 	void connectConst(ConstInput c);
 	// TODO: Think carefully about disconnecting
-	void remove(const std::string& name);
+	void disconnectInput(const std::string& name, int inputNumber);
 	void propagateAll();
 };

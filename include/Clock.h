@@ -2,6 +2,7 @@
 #include "Connector.h"
 #include "vector"
 #include "State.h"
+#include <string>
 #include <utility>
 
 class Clock {
@@ -11,11 +12,11 @@ private:
 	double m_period{};		//in micro seconds
 	double m_endTime{};	//in micro seconds
 	void changeState();	//helping method
+	void generateSignal();
 
 public:
 	Clock(int period = 1, int endTime = 1); //default T = 1 ms, endTime = 1 ms
 	const std::vector<std::pair<double, State>>& getState();
-	void generateSignal();
 	const double getPeriod() const;
 	const double getEndTime() const;
 };
