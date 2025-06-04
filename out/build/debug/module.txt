@@ -1,7 +1,6 @@
 #COMPONENTS
-and1 AND 1
+not NOT 1
 clk CLOCK 1 10
 #STATIC_IN
-and1 1 1
-and1 2 1
 #CONNECTIONS
+clk 1 not

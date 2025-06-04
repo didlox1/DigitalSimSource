@@ -65,6 +65,7 @@ void File::loadModule(const std::string& filename, Module& m)
         if (current_section == "#COMPONENTS") {
             // Component section
             std::string name, type;
+            double delay;
             ss >> name >> type;
 
             if (type == "AND") {
@@ -95,33 +96,13 @@ void File::loadModule(const std::string& filename, Module& m)
         }
         else if (current_section == "#STATIC_IN") {
             // Constant state section
-            // TODO: refactor that and in main
             std::string name, pin, state;
             ss >> name >> pin >> state;
-            if (state == "0") {
-                if (pin == "1") {
-                    gates.find(name)->second->getInput().first.setState(State::LOW); 
-                    m.connectConst(ConstInput(name, "1", "0"));
-                }
-                else if (pin == "2") {
-                    gates.find(name)->second->getInput().second.setState(State::LOW);
-                    m.connectConst(ConstInput(name, "2", "0"));
-                }
-            }
-            else if (state == "1") {
-                if (pin == "1") {
-                    gates.find(name)->second->getInput().first.setState(State::HIGH);
-                    m.connectConst(ConstInput(name, "1", "1"));
-                }
-                else if (pin == "2") {
-                    gates.find(name)->second->getInput().second.setState(State::LOW);
-                    m.connectConst(ConstInput(name, "2", "1"));
-                }
-            }
+            m.connectConst(ConstInput(name, pin, state));
         }
         else if (current_section == "#CONNECTIONS") {
             // Connections section
-            std::string src, dest, destPin; // TODO: do that one
+            std::string src, dest, destPin;
             ss >> src >> destPin >> dest;
             m.connect(Connection(src, destPin, dest));
         }

@@ -98,8 +98,6 @@ void Module::connectConst(ConstInput c)
 		return;
 		break;
 	}
-	propagateAll();
-	// TODO: refactor that and in main
 }
 
 std::map<std::string, std::unique_ptr<Gate>>& Module::returnGates()
@@ -125,16 +123,33 @@ std::vector<Connection>& Module::returnConnections()
 void Module::remove(const std::string& name)
 {
 	// TODO: validate
-	auto it = m_connections.begin();
-	while (it != m_connections.end()) {
-		if ((name == it->destGate) || (name == it->srcGate)) {
-			m_connections.erase(it); 
+	/*
+	auto it1 = m_connections.begin();
+	while (it1 != m_connections.end()) {
+		if ((name == it1->destGate) || (name == it1->srcGate)) {
+			m_connections.erase(it1); 
 		}
 		else {
-			++it;
+			++it1;
 		}
 	}
-	m_gates.erase(name);
+	auto it2 = m_constInputs.begin();
+	while (it2 != m_constInputs.end()) {
+		if (name == it2->destGate) {
+			m_constInputs.erase(it2);
+		}
+		else {
+			++it2;
+		}
+	}
+	if (m_gates.find(name) != m_gates.end()) {
+		m_gates.erase(name); // TODO: try to correct clock class;
+	}
+	if (m_clocks.find(name) != m_clocks.end()) {
+		m_clocks.erase(name);
+	}
+	*/
+	// Remove connections
 }
 
 void Module::propagateAll()

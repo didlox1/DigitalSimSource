@@ -239,7 +239,7 @@ void Menu::deleteComponent()
     do {
         std::cout << "Select component to remove (write a name):\n";
         getline(std::cin, name);
-        if (gates.find(name) != gates.end()) break;
+        if (gates.find(name) != gates.end() || clocks.find(name) != clocks.end()) break;
         else if (name.empty()) return;
         else std::cout << "Invalid name.\n";
     } while (name != "");
