@@ -16,6 +16,6 @@ public:
 	Clock(int period = 1, int endTime = 1); //default T = 1 ms, endTime = 1 ms
 	const std::vector<std::pair<double, State>>& getState();
 	void generateSignal();
-	const double getPeriod();
-	const double getEndTime();
+	const double getPeriod() const;
+	const double getEndTime() const;
 };

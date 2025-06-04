@@ -19,12 +19,12 @@ void Clock::generateSignal() {
 	}
 }
 
-const double Clock::getPeriod()
+const double Clock::getPeriod() const
 {
 	return m_period;
 }
 
-const double Clock::getEndTime()
+const double Clock::getEndTime() const
 {
 	return m_endTime;
 }

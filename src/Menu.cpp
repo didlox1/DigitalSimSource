@@ -114,24 +114,18 @@ void Menu::connectComponents()
         std::cout << "2. Second\n";
         std::cout << "0. Return\n";
         inputNumber = getIntegerInput();
-
-        switch (inputNumber) {
-        case 1: 
-            m_module.connect(Connection(choice1, "1", choice2));
+        if (inputNumber == 1 || inputNumber == 2) {
+            m_module.connect(Connection(choice1, std::to_string(inputNumber), choice2));
             return;
-            break;
-        case 2: 
-            m_module.connect(Connection(choice1, "2", choice2));
-            return;
-            break;
-        case 0: return; break;
-        default: std::cout << "Invalid option.\n"; break;
         }
+        else if(inputNumber == 0) return;
+        else std::cout << "Invalid option.\n";
     } while (true);
 }
 
 void Menu::setConstantInput()
 {
+
     clearScreen();
     std::string name;
     int state{};
@@ -147,86 +141,45 @@ void Menu::setConstantInput()
         else if (name.empty()) return;
         else std::cout << "Invalid name.\n";
     } while (name != "\n");
-    //Getting number of inputs for the menu options
-    numberOfInputs = gates.find(name)->second->getNumberOfInputs();
-    if (numberOfInputs == 1) {
+    do {
         clearScreen();
         std::cout << "Select state:\n";
         std::cout << "0. LOW\n";
         std::cout << "1. HIGH\n";
         std::cout << "2. Return\n";
+            state = getIntegerInput();
+        if (state == 0 || state == 1) break;
+        else if (state == 2) return;
+        else std::cout << "Invalid option.\n";
+    }while(true);
+    //Getting number of inputs for the menu options
+    numberOfInputs = gates.find(name)->second->getNumberOfInputs();
+    // if 2 inputs available then choose one
+    if(numberOfInputs == 2){
         do {
-            switch (state) {
-            case 0:
-                gates.find(name)->second->getInput().first.setState(State::LOW);
-                m_module.connectConst(ConstInput(name, "1", "0"));
-                m_module.propagateAll();
+            clearScreen();
+            std::cout << "Select input number:\n";
+            std::cout << "1. First\n";
+            std::cout << "2. Second\n";
+            std::cout << "0. Return\n";
+            input = getIntegerInput();
+            switch (input) {
+            case 1: 
+                m_module.connectConst(ConstInput(name, "1", std::to_string(state)));
                 return;
                 break;
-            case 1:
-                gates.find(name)->second->getInput().first.setState(State::HIGH);
-                m_module.connectConst(ConstInput(name, "1", "1"));
-                m_module.propagateAll();
+            case 2: 
+                m_module.connectConst(ConstInput(name, "2", std::to_string(state)));
                 return;
                 break;
-            case 2: return; break;
+            case 0: 
+                return; break;
             default: std::cout << "Invalid option.\n"; break;
             }
         } while (true);
     }
-    //Selecting input (first || second -> bcs 2-input gates)
-    do {
-        clearScreen();
-        std::cout << "Select input number:\n";
-        std::cout << "1. First\n";
-        std::cout << "2. Second\n";
-        std::cout << "0. Return\n";
-        input = getIntegerInput();
-
-        switch (input) {
-        case 1: break;
-        case 2: break;
-        case 0: return; break;
-        default: std::cout << "Invalid option.\n"; break;
-        }
-    } while (input != 1 && input != 2);
-    //Selecting state (LOW || HIGH)
-    do {
-        clearScreen();
-        std::cout << "Select state:\n";
-        std::cout << "0. LOW\n";
-        std::cout << "1. HIGH\n";
-        std::cout << "2. Return\n";
-        state = getIntegerInput();
-        switch (state){
-        case 0: 
-            if (input == 1) {
-                gates.find(name)->second->getInput().first.setState(State::LOW);
-                m_module.connectConst(ConstInput(name, "1", "0"));
-            }
-            else if (input == 2) {
-                gates.find(name)->second->getInput().second.setState(State::LOW);
-                m_module.connectConst(ConstInput(name, "2", "0"));
-            }
-            m_module.propagateAll();
-            return;
-            break;
-        case 1: 
-            if (input == 1) {
-                gates.find(name)->second->getInput().first.setState(State::HIGH);
-                m_module.connectConst(ConstInput(name, "1", "1"));
-            }
-            else if (input == 2) {
-                gates.find(name)->second->getInput().second.setState(State::HIGH);
-                m_module.connectConst(ConstInput(name, "2", "1"));
-            }
-            m_module.propagateAll();
-            return;
-            break;
-        case 2: return; break;
-        default: std::cout << "Invalid option.\n"; break;
-        }
-    } while (true);
+    //if only one input available
+    else if(numberOfInputs == 1) m_module.connectConst(ConstInput(name, "1", std::to_string(state)));
 }
 
 void Menu::viewComponentOutput()
@@ -342,31 +295,23 @@ void Menu::mainMenu()
         std::cout << "8. Open Module\n";
         std::cout << "0. Exit\n> ";
         choice = getIntegerInput();
-
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         switch (choice) {
         case 1:
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             addComponent(); break;
         case 2: 
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             connectComponents(); break;
         case 3: 
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             setConstantInput(); break;
         case 4: 
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             viewComponentOutput(); break;
         case 5: 
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             viewAllComponents(); break;
         case 6:
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             deleteComponent(); break;
         case 7:
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             saveModule(); break;
         case 8:
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             openModule(); break;
         case 0: exit(EXIT_SUCCESS); break;
         default: std::cout << "Invalid option.\n"; break;

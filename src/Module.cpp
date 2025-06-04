@@ -82,6 +82,22 @@ void Module::connect(Connection c)
 void Module::connectConst(ConstInput c)
 {
 	m_constInputs.push_back(c);
+	State state = State::HIGH_IMPEDANCE;
+	if (c.state == "0") state = State::LOW;
+	else if (c.state == "1") state = State::HIGH;
+	auto& in = m_gates.find(c.destGate)->second->getInput();
+	switch (std::stoi(c.destPin)) {
+	case(1):
+		in.first.setState(state);
+		propagateAll();
+		return;
+		break;
+	case(2):
+		in.second.setState(state);
+		propagateAll();
+		return;
+		break;
+	}
 	propagateAll();
 	// TODO: refactor that and in main
 }
