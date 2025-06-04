@@ -22,7 +22,7 @@ void ANDGate::propagateOutput() {
                 j++;
             }
             State result = (stateA == HIGH && stateB == HIGH) ? HIGH : LOW;
-            output.push_back(std::pair(time + m_propagationDelay, result));
+            output.push_back(std::pair(time + m_propagationTime, result));
         }
         output.erase(output.begin()); 
         out.setStateTimeline(output);
@@ -30,10 +30,9 @@ void ANDGate::propagateOutput() {
 }
 std::string ANDGate::returnType()
 {
-    return "AND Gate";
+    return "AND";
 }
 int ANDGate::getNumberOfInputs()
 {
     return 2;
 }
-;

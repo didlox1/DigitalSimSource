@@ -79,6 +79,13 @@ void Module::connect(Connection c)
 	}
 }
 
+void Module::connectConst(ConstInput c)
+{
+	m_constInputs.push_back(c);
+	propagateAll();
+	// TODO: refactor that and in main
+}
+
 std::map<std::string, std::unique_ptr<Gate>>& Module::returnGates()
 {
 	return m_gates;
@@ -89,9 +96,19 @@ std::map<std::string, Clock>& Module::returnClocks()
 	return m_clocks;
 }
 
+std::vector<ConstInput>& Module::returnConstInputs()
+{
+	return m_constInputs;
+}
+
+std::vector<Connection>& Module::returnConnections()
+{
+	return m_connections;
+}
+
 void Module::remove(const std::string& name)
 {
-	// TODO: valifate
+	// TODO: validate
 	auto it = m_connections.begin();
 	while (it != m_connections.end()) {
 		if ((name == it->destGate) || (name == it->srcGate)) {

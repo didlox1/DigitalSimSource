@@ -23,7 +23,7 @@ void ORGate::propagateOutput() {
             }
             // OR Gate condition
             State result = (stateA == LOW && stateB == LOW) ? LOW : HIGH;
-            output.push_back(std::pair(time + m_propagationDelay, result));
+            output.push_back(std::pair(time + m_propagationTime, result));
         }
         output.erase(output.begin()); 
         out.setStateTimeline(output);
@@ -31,10 +31,10 @@ void ORGate::propagateOutput() {
 }
 std::string ORGate::returnType()
 {
-    return "OR Gate";
+    return "OR";
 }
 int ORGate::getNumberOfInputs()
 {
     return 2;
 }
-;
+

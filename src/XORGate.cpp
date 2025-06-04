@@ -23,7 +23,7 @@ void XORGate::propagateOutput() {
             }
             // XOR Gate condition
             State result = (stateA != stateB) ? HIGH : LOW;
-            output.push_back(std::pair(time + m_propagationDelay, result));
+            output.push_back(std::pair(time + m_propagationTime, result));
         }
         output.erase(output.begin()); 
         out.setStateTimeline(output);
@@ -31,10 +31,9 @@ void XORGate::propagateOutput() {
 }
 std::string XORGate::returnType()
 {
-    return "XOR Gate";
+    return "XOR";
 }
 int XORGate::getNumberOfInputs()
 {
     return 2;
 }
-;

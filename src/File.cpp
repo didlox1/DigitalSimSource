@@ -1,28 +1,52 @@
 #include "File.h"
 
 /* Example
-#Components
+#COMPONENTS (name, type, properties)
 and1 AND 10
 or1 OR 10
 c1 CLOCK 10000 10000
-#STATIC_IN
-and1 first 1
-and1 second 1
-or1 second 0
-#CONNECTIONS
-c1 FIRST or1
+#STATIC_IN (destGate, destPin, state)
+and1 1 1
+and1 2 1
+or1 2 0
+#CONNECTIONS (srcGate, destPin, destGate)
+c1 1 or1
 */
 
-void File::saveModule(const std::string& filename, const Module& m)
+void File::saveModule(const std::string& filename, Module& m)
 {
-	std::ofstream m_file(filename);
+    const auto& gates = m.returnGates();
+    auto& clocks = m.returnClocks();
+    const auto& constInputs = m.returnConstInputs();
+    const auto& connections = m.returnConnections();
+    std::ofstream m_file(filename);
+    if (!m_file) {
+        std::cerr << "Cannot open the file" << std::endl;
+        return;
+    }
+    m_file << "#COMPONENTS\n";
+    for (const auto& gate : gates) {
+        m_file << gate.first << " " << gate.second->returnType() << " " << gate.second->getPropagationTime()<< "\n";
+    }
+    for (auto& clock : clocks) {
+        m_file << clock.first << " CLOCK " << clock.second.getPeriod() << " " << clock.second.getEndTime()<< "\n";
+    }
+    m_file << "#STATIC_IN\n";
+    for (const auto& constInput : constInputs) {
+        m_file << constInput.destGate << " " << constInput.destPin << " " << constInput.state<< "\n";
+    }
+    m_file << "#CONNECTIONS\n";
+    for (const auto& connection : connections) {
+        m_file << connection.srcGate << " " << connection.destPin << " " << connection.destGate<< "\n";
+    }
+    m_file.close();
 }
 
 void File::loadModule(const std::string& filename, Module& m)
 {
     const auto& gates = m.returnGates();
     std::ifstream m_file(filename);
-    if (!m_file.is_open()) {
+    if (!m_file) {
         std::cerr << "Cannot open the file" << std::endl;
         return;
     }
@@ -37,7 +61,6 @@ void File::loadModule(const std::string& filename, Module& m)
         }
 
         std::stringstream ss(line);
-        std::string token;
 
         if (current_section == "#COMPONENTS") {
             // Component section
@@ -45,49 +68,54 @@ void File::loadModule(const std::string& filename, Module& m)
             ss >> name >> type;
 
             if (type == "AND") {
-                int delay;
+                double delay;
                 ss >> delay;
                 m.addGate(name, Type::AND, delay);
             }
             else if (type == "OR") {
-                int delay;
+                double delay;
                 ss >> delay;
                 m.addGate(name, Type::OR, delay);
             }
             else if (type == "XOR") {
-                int delay;
+                double delay;
                 ss >> delay;
                 m.addGate(name, Type::XOR, delay);
             }
             else if (type == "NOT") {
-                int delay;
+                double delay;
                 ss >> delay;
                 m.addGate(name, Type::NOT, delay);
             }
             else if (type == "CLOCK") {
-                int period, endTime;
+                double period, endTime;
                 ss >> period >> endTime;
                 m.addClock(name, period, endTime);
             }
         }
         else if (current_section == "#STATIC_IN") {
             // Constant state section
-            std::string component, pin, value;
-            ss >> component >> pin >> value;
-            if (value == "0") {
-                if (pin == "first") {
-                    gates.find(component)->second->getInput().first.setState(State::LOW);
+            // TODO: refactor that and in main
+            std::string name, pin, state;
+            ss >> name >> pin >> state;
+            if (state == "0") {
+                if (pin == "1") {
+                    gates.find(name)->second->getInput().first.setState(State::LOW); 
+                    m.connectConst(ConstInput(name, "1", "0"));
                 }
-                else if (pin == "second") {
-                    gates.find(component)->second->getInput().second.setState(State::LOW);
+                else if (pin == "2") {
+                    gates.find(name)->second->getInput().second.setState(State::LOW);
+                    m.connectConst(ConstInput(name, "2", "0"));
                 }
             }
-            else if (value == "1") {
-                if (pin == "first") {
-                    gates.find(component)->second->getInput().second.setState(State::HIGH);
+            else if (state == "1") {
+                if (pin == "1") {
+                    gates.find(name)->second->getInput().first.setState(State::HIGH);
+                    m.connectConst(ConstInput(name, "1", "1"));
                 }
-                else if (pin == "second") {
-                    gates.find(component)->second->getInput().second.setState(State::LOW);
+                else if (pin == "2") {
+                    gates.find(name)->second->getInput().second.setState(State::LOW);
+                    m.connectConst(ConstInput(name, "2", "1"));
                 }
             }
         }
@@ -95,7 +123,8 @@ void File::loadModule(const std::string& filename, Module& m)
             // Connections section
             std::string src, dest, destPin; // TODO: do that one
             ss >> src >> destPin >> dest;
-            //m.connect(Connection(src, destPin, dest)); // TODO: do connect() ???
+            m.connect(Connection(src, destPin, dest));
         }
     }
+    m_file.close();
 }

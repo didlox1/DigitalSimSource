@@ -17,7 +17,7 @@ void NOTGate::propagateOutput()
 
             // NOT Gate condition
             State result = (stateA == LOW) ? HIGH : LOW;
-            output.push_back(std::pair(time + m_propagationDelay, result));
+            output.push_back(std::pair(time + m_propagationTime, result));
         }
         out.setStateTimeline(output);
     }
@@ -25,10 +25,11 @@ void NOTGate::propagateOutput()
 
 std::string NOTGate::returnType()
 {
-	return "NOT Gate";
+	return "NOT";
 }
 
 int NOTGate::getNumberOfInputs()
 {
     return 1;
 }
+

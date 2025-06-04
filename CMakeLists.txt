@@ -24,15 +24,11 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)  # Ensures the standard is required, not optional
 set(CMAKE_CXX_EXTENSIONS OFF)        # Disable compiler-specific extensions (e.g., GNU extensions)
-#add_compile_options(/Zc:__cplusplus)
 # MSVC-specific workaround for C++20 (if needed for older MSVC versions)
 if(MSVC)
     set(CMAKE_CXX17_STANDARD_COMPILE_OPTION "-std:c++latest")
     set(CMAKE_CXX17_EXTENSION_COMPILE_OPTION "-std:c++latest")
 endif()
-
-#find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
-#find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
 # Define the executable and list source files
 add_executable(${PROJECT_NAME}
@@ -64,7 +60,6 @@ add_executable(${PROJECT_NAME}
 target_include_directories(${PROJECT_NAME} PRIVATE
     include/
 )
-#target_link_libraries(DigitalSim PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 # Ensure the target uses C++20 features
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_20)
 

@@ -12,16 +12,22 @@
 
 
 struct Connection {
-	std::string srcGate;  // e.g., "AND1" "Name"
-	std::string destPin;  // e.g., "IN1/IN2"
-	std::string destGate; // e.g., "OR2" "Name"
+	std::string srcGate;  // np. "AND1" "Name"
+	std::string destPin;  // np. "IN1/IN2"
+	std::string destGate; // np. "OR2" "Name"
+};
+
+struct ConstInput {
+	std::string destGate;	// np. and1 
+	std::string destPin;	// np. second 
+	std::string state;		// np. 0
 };
 
 enum Type {
 	AND,
 	OR,
 	XOR,
-	NOT	// Add other gate types as needed
+	NOT	
 };
 
 class Module{
@@ -29,6 +35,7 @@ private:
 	std::map<std::string ,std::unique_ptr<Gate>> m_gates;
 	std::map<std::string, Clock> m_clocks;
 	std::vector<Connection> m_connections;
+	std::vector<ConstInput> m_constInputs; //stores name and const State
 public:
 	void addGate(std::string name, Type gateType, int propagationTime = 0);
 	void addClock(std::string name, int period = 0, int endTime = 0);
@@ -36,8 +43,11 @@ public:
 	Clock& getClock(std::string name);
 	std::map<std::string, std::unique_ptr<Gate>>& returnGates();
 	std::map<std::string, Clock>& returnClocks();
+	std::vector<ConstInput>& returnConstInputs();
+	std::vector<Connection>& returnConnections();
 
 	void connect(Connection c);
+	void connectConst(ConstInput c);
 	// TODO: Think carefully about disconnecting
 	void remove(const std::string& name);
 	void propagateAll();

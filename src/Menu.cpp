@@ -96,7 +96,7 @@ void Menu::connectComponents()
     do {
         std::cout << "Select second component (input):\n";
         getline(std::cin, choice2);
-        if (gates.find(choice2) != gates.end() || clocks.find(choice2) != clocks.end()) break;
+        if (gates.find(choice2) != gates.end()) break;
         else if (choice2.empty()) return;
         else std::cout << "Invalid name.\n";
     } while (choice2 != "\n");
@@ -133,7 +133,7 @@ void Menu::connectComponents()
 void Menu::setConstantInput()
 {
     clearScreen();
-    std::string choice;
+    std::string name;
     int state{};
     int input{};
     int numberOfInputs{};
@@ -142,13 +142,13 @@ void Menu::setConstantInput()
     //Selecting gate by name
     do {
         std::cout << "Select component (write a name):\n";
-        getline(std::cin, choice);
-        if (gates.find(choice) != gates.end()) break;
-        else if (choice.empty()) return;
+        getline(std::cin, name);
+        if (gates.find(name) != gates.end()) break;
+        else if (name.empty()) return;
         else std::cout << "Invalid name.\n";
-    } while (choice != "\n");
+    } while (name != "\n");
     //Getting number of inputs for the menu options
-    numberOfInputs = gates.find(choice)->second->getNumberOfInputs();
+    numberOfInputs = gates.find(name)->second->getNumberOfInputs();
     if (numberOfInputs == 1) {
         clearScreen();
         std::cout << "Select state:\n";
@@ -158,12 +158,14 @@ void Menu::setConstantInput()
         do {
             switch (state) {
             case 0:
-                gates.find(choice)->second->getInput().first.setState(State::LOW);
+                gates.find(name)->second->getInput().first.setState(State::LOW);
+                m_module.connectConst(ConstInput(name, "1", "0"));
                 m_module.propagateAll();
                 return;
                 break;
             case 1:
-                gates.find(choice)->second->getInput().first.setState(State::HIGH);
+                gates.find(name)->second->getInput().first.setState(State::HIGH);
+                m_module.connectConst(ConstInput(name, "1", "1"));
                 m_module.propagateAll();
                 return;
                 break;
@@ -199,20 +201,24 @@ void Menu::setConstantInput()
         switch (state){
         case 0: 
             if (input == 1) {
-                gates.find(choice)->second->getInput().first.setState(State::LOW);
+                gates.find(name)->second->getInput().first.setState(State::LOW);
+                m_module.connectConst(ConstInput(name, "1", "0"));
             }
             else if (input == 2) {
-                gates.find(choice)->second->getInput().second.setState(State::LOW);
+                gates.find(name)->second->getInput().second.setState(State::LOW);
+                m_module.connectConst(ConstInput(name, "2", "0"));
             }
             m_module.propagateAll();
             return;
             break;
         case 1: 
             if (input == 1) {
-                gates.find(choice)->second->getInput().first.setState(State::HIGH);
+                gates.find(name)->second->getInput().first.setState(State::HIGH);
+                m_module.connectConst(ConstInput(name, "1", "1"));
             }
             else if (input == 2) {
-                gates.find(choice)->second->getInput().second.setState(State::HIGH);
+                gates.find(name)->second->getInput().second.setState(State::HIGH);
+                m_module.connectConst(ConstInput(name, "2", "1"));
             }
             m_module.propagateAll();
             return;
@@ -271,7 +277,7 @@ void Menu::viewAllComponents()
 
 void Menu::deleteComponent()
 {
-    std::string choice;
+    std::string name;
     clearScreen();
     const auto& gates = m_module.returnGates();
     const auto& clocks = m_module.returnClocks();
@@ -279,21 +285,12 @@ void Menu::deleteComponent()
     listClocks(clocks);
     do {
         std::cout << "Select component to remove (write a name):\n";
-        getline(std::cin, choice);
-        if (gates.find(choice) != gates.end()) break;
-        else if (choice.empty()) return;
+        getline(std::cin, name);
+        if (gates.find(name) != gates.end()) break;
+        else if (name.empty()) return;
         else std::cout << "Invalid name.\n";
-    } while (choice != "");
-    const auto& gate = gates.find(choice);
-    const auto& clock = clocks.find(choice);
-    /*
-    if (gate != gates.end()) {
-        m_module.remove(gate);
-    }
-    if (clock != clocks.end()) {
-        m_module.remove(clock);
-    }
-    */
+    } while (name != "");
+    m_module.remove(name);
 }
 
 void Menu::saveModule()

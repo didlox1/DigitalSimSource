@@ -4,7 +4,7 @@
 class ANDGate : public Gate {
 private:
 public:
-	ANDGate(int propagationTime) : Gate(propagationTime) {};
+	ANDGate(double propagationTime) : Gate(propagationTime) {};
 	void propagateOutput() override;
 	std::string returnType() override;
 	int getNumberOfInputs() override;

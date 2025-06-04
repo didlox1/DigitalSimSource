@@ -1,6 +1,6 @@
 #include "Clock.h"
 
-Clock::Clock(int period, int simTime) :m_period(double(period)), m_simTime(double(simTime)) { generateSignal(); }
+Clock::Clock(int period, int endTime) :m_period(double(period)), m_endTime(double(endTime)) { generateSignal(); }
 
 const std::vector<std::pair<double, State>>& Clock::getState()
 {
@@ -13,9 +13,19 @@ void Clock::changeState() {
 };
 
 void Clock::generateSignal() {
-	for (double t = 0.0; t <= m_simTime; t += m_period / 2.0) {
+	for (double t = 0.0; t <= m_endTime; t += m_period / 2.0) {
 		m_state.emplace_back(t, m_currentState);
 		changeState();
 	}
+}
+
+const double Clock::getPeriod()
+{
+	return m_period;
+}
+
+const double Clock::getEndTime()
+{
+	return m_endTime;
 }
 
