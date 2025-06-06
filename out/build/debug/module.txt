@@ -1,6 +1,0 @@
-#COMPONENTS
-not NOT 1
-clk CLOCK 1 10
-#STATIC_IN
-#CONNECTIONS
-clk 1 not
