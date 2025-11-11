@@ -1,3 +1,0 @@
-/home/runner/work/DigitalSimSource/DigitalSimSource/build/CMakeFiles/DigitalSim.dir
-/home/runner/work/DigitalSimSource/DigitalSimSource/build/CMakeFiles/edit_cache.dir
-/home/runner/work/DigitalSimSource/DigitalSimSource/build/CMakeFiles/rebuild_cache.dir
